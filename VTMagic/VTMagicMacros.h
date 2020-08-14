@@ -47,7 +47,7 @@ blue:((float)(hexValue & 0xFF))/255.0 alpha:1.0]
 
 
 // tabbar高度
-#define VTTABBAR_HEIGHT (49)
+#define VTTABBAR_HEIGHT (KiPhoneX ? 83 : 49)
 // 状态栏高度
 #define VTSTATUSBAR_HEIGHT (KiPhoneX ? 44 : 20)
 
