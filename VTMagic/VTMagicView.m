@@ -955,6 +955,9 @@ static VTPanRecognizerDirection direction = VTPanRecognizerDirectionUndefined;
         _contentView.dataSource = self;
         _contentView.delegate = self;
         _contentView.bounces = NO;
+        if (@available(iOS 11.0, *)) {
+            _contentView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        }
     }
     return _contentView;
 }
