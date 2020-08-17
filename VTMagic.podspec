@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
     s.name       = 'VTMagic'
-    s.version    = '1.2.6'
+    s.version    = '1.2.7'
     s.license    = { :type => 'MIT' }
     s.homepage   = 'https://github.com/simplecomponent/VTMagic'
     # s.homepage   = 'https://github.com/tianzhuo112/VTMagic'
