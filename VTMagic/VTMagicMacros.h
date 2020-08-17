@@ -45,10 +45,11 @@ blue:((float)(hexValue & 0xFF))/255.0 alpha:1.0]
 #define kiPhoneDevice ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
 #define KiPhoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
 
-
+#define SCREEN_HEIGHT ([[UIScreen mainScreen]bounds].size.height)
+#define SCREEN_WIDTH ([[UIScreen mainScreen]bounds].size.width)
 // tabbar高度
-#define VTTABBAR_HEIGHT (KiPhoneX ? 83 : 49)
+#define VT_TABBAR_HEIGHT (SCREEN_HEIGHT >= 812 ? 83 : 49)
 // 状态栏高度
-#define VTSTATUSBAR_HEIGHT (KiPhoneX ? 44 : 20)
+#define VT_STATUS_BAR_HEIGHT (SCREEN_HEIGHT >= 812 ? 44 : 20)
 
 #endif

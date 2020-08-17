@@ -117,7 +117,7 @@ static const void *kVTMagicView = &kVTMagicView;
 
 - (void)updateFrameForSubviews {
     CGSize size = self.frame.size;
-    CGFloat topY = _againstStatusBar ? VTSTATUSBAR_HEIGHT : 0;
+    CGFloat topY = _againstStatusBar ? VT_STATUS_BAR_HEIGHT : 0;
     CGFloat headerY = _headerHidden ? -_headerHeight : topY;
     _headerView.frame = CGRectMake(0, headerY, size.width, _headerHeight);
     
@@ -145,7 +145,7 @@ static const void *kVTMagicView = &kVTMagicView;
     self.needSkipUpdate = YES;
     CGRect originalContentFrame = _contentView.frame;
     CGFloat contentY = CGRectGetMaxY(_navigationView.frame);
-    CGFloat contentH = size.height - contentY + (_needExtendBottom ? VTTABBAR_HEIGHT : 0);
+    CGFloat contentH = size.height - contentY + (_needExtendBottom ? VT_TABBAR_HEIGHT : 0);
     _contentView.frame = CGRectMake(0, contentY, size.width, contentH);
     if (!CGRectEqualToRect(_contentView.frame, originalContentFrame)) {
         [_contentView resetPageFrames];
@@ -160,7 +160,7 @@ static const void *kVTMagicView = &kVTMagicView;
     CGRect leftFrame = _leftNavigatoinItem.bounds;
     CGFloat offset = CGRectGetHeight(leftFrame)/2;
     leftFrame.origin.y = CGRectGetMidY(_navigationView.bounds) - offset;
-    if (_againstStatusBar && _headerHidden) leftFrame.origin.y += VTSTATUSBAR_HEIGHT/2;
+    if (_againstStatusBar && _headerHidden) leftFrame.origin.y += VT_STATUS_BAR_HEIGHT/2;
     _leftNavigatoinItem.frame = leftFrame;
 }
 
@@ -169,7 +169,7 @@ static const void *kVTMagicView = &kVTMagicView;
     CGFloat offset = CGRectGetHeight(rightFrame)/2;
     rightFrame.origin.x = _navigationView.frame.size.width - rightFrame.size.width;
     rightFrame.origin.y = CGRectGetMidY(_navigationView.bounds) - offset;
-    if (_againstStatusBar && _headerHidden) rightFrame.origin.y += VTSTATUSBAR_HEIGHT/2;
+    if (_againstStatusBar && _headerHidden) rightFrame.origin.y += VT_STATUS_BAR_HEIGHT/2;
     _rightNavigatoinItem.frame = rightFrame;
 }
 
